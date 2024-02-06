@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a Survey Form Certification Project</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <header class="header">
+        <h1 id="title">Survey Form Project</h1>
+        <nav class="header-nav-container">
+            <button id="contact" type="button">
+                <a href="contact.html">Contact</a>
+            </button>
+            <button id="info" type="button">
+                <a href="info.html">Info</a>
+            </button>
+        </nav>
+    </header>
+    <h1 id="title">Welcome to the <mark>entertainment media preference survey</mark></h1>
+    <p id="description">Below, you will find many questions asking you about your <mark>favorite forms of entertainment</mark>, as well as preferences and more! Ready to begin?</p>
+    <form id="survey-form" method="post" novalidate>
+
+      <section>
+        <fieldset id="section1">
+          <legend>Preliminaries</legend>
+          <label class="question" id="name-label" for="name">Please enter your name: (*Required) </label>
+          <input id="name" type="text" name="yourName" placeholder="First and Last" aria-describedby="name-description" required pattern="[A-Za-z\s]+" minLength="1" maxLength="100" />
+          <span role="alert" id="nameError" aria-hidden="true">
+            Please enter a name.
+          </span>
+          <label class="question" id="email-label" for="email">Please enter your email: (*Required) </label>
+          <input id="email" type="email" name="mail" placeholder="Any email will do" aria-describedby="email-description" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" minLength="8" />
+          <span role="alert" id="emailError" aria-hidden="true">
+            You must enter a properly formatted email address.
+          </span>
+          <label class="question" id="number-label" for="number">How old are you?
+            <input id="number" type="number" name="age" min="0" max="125" placeholder="Age" />
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <fieldset id="section2">
+          <legend>
+            <mark>Movie Preferences</mark>
+          </legend>
+          <label class="question" id="movie-genre-label">What is your favorite movie genre?
+            <select id="dropdown">
+              <option disabled selected>Select a genre you like</option>
+              <option>>Action</option>
+              <option>Comedy</option>
+              <option>Drama</option>
+              <option>Horror</option>
+              <option>Romance</option>
+              <option>Science Fiction</option>
+              <option>Thriller</option>
+              <option>Hybrid</option>
+              <option>Other</option>
+              <option>I don't watch movies</option>
+            </select>
+          </label>
+          <label class="question" id="movie-platform-label">What is your preferred viewing platform?</label>
+          <label class="radioContainer" for="movie-netflix">
+            <input type="radio" id="movie-netflix" name="moviePlatform" value="netflix" />Netflix
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="movie-hulu">
+            <input type="radio" id="movie-hulu" name="moviePlatform" value="hulu" />Hulu
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="movie-youtube-tv">
+            <input type="radio" id="movie-youtube-tv" name="moviePlatform" value="youtube-tv" />YouTube TV
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="movie-amazon">
+            <input type="radio" id="movie-amazon" name="moviePlatform" value="amazon" />Amazon
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="movie-tubi">
+            <input type="radio" id="movie-tubi" name="moviePlatform" value="tubi" />Tubi
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="movie-home-video">
+            <input type="radio" id="movie-home-video" name="moviePlatform" value="home-video" />Home video
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="movie-theaters">
+            <input type="radio" id="movie-theaters" name="moviePlatform" value="theaters" />Theaters
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="movie-pirating">
+            <input type="radio" id="movie-pirating" name="moviePlatform" value="pirating" />Pirating
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="movie-frequency-label">How often do you go to a movie theater?</label>
+          <label class="radioContainer" for="theater-never">  
+            <input type="radio" id="theater-never" name="movieFrequency" value="never-been" />I've never been
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="theater-cant-remember">
+            <input type="radio" id="theater-cant-remember" name="movieFrequency" value="cant-remember" />Can't remember the last time I've been
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="theater-few-years">  
+            <input type="radio" id="theater-few-years" name="movieFrequency" value="every-few-years" />Once every few years
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="theater-year">  
+            <input type="radio" id="theater-year" name="movieFrequency" value="annually" />Once a year
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="theater-few-months">
+            <input type="radio" id="theater-few-months" name="movieFrequency" value="every-few-months" />Every few months or so
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="theater-month">  
+            <input type="radio" id="theater-month" name="movieFrequency" value="monthly" />About once a month
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="theater-more">
+            <input type="radio" id="theater-more" name="movieFrequency" value="over-once-month" />More than once a month
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="theater-irregularly">
+            <input type="radio" id="theater-irregularly" name="movieFrequency" value="irregularly" />Irregularly
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="fav-movie-label">What is your favorite movie? 
+            <input id="favorite-movie" type="text" placeholder="Movie name" />
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <fieldset id="section3">
+          <legend>
+            <mark>Music Listening Habits</mark>
+          </legend>
+          <label class="question" id="music-genre-label">Favorite music genres? (Select all that apply) </label>
+          <div class="checkbox-group">
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="pop"/>Pop
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="rock" />Rock
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="rap" />Rap
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="jazz" />Jazz
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="blues" />Blues
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="folk" />Folk
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="metal" />Metal
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="country" />Country
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="classical" />Classical
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="reggae" />Reggae
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="punk" />Punk
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="techno" />Techno
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="Trance" />Trance
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="hip-hop" />Hip Hop
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="musicGenre" value="reggaeton" />Reggaeton
+              <span class="boxCheck"></span>
+            </label>
+          </div>
+          <label class="question" id="music-services-label">Preferred music streaming service?</label>
+          <label class="radioContainer" for="music-youtube">
+            <input type="radio" id="music-youtube" name="musicService" value="youtube" />YouTube
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="music-spotify">
+            <input type="radio" id="music-spotify" name="musicService" value="spotify" />Spotify
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="apple-music">
+            <input type="radio" id="apple-music" name="musicService" value="apple-music" />Apple Music
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="music-amazon">
+            <input type="radio" id="music-amazon" name="musicService" value="amazon-music" />Amazon Music
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="music-tidal">
+            <input type="radio" id="music-tidal" name="musicService" value="tidal" />Tidal
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="music-deezer">
+            <input type="radio" id="music-deezer" name="musicService" value="deezer" />Deezer
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="music-pandora">
+            <input type="radio" id="music-pandora" name="musicService" value="pandora" />Pandora
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="music-iheart">
+            <input type="radio" id="music-iheart" name="musicService" value="iheart-radio" />iHeart Radio
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="concerts-label">How often do you attend concerts?</label>
+          <label class="radioContainer" for="concerts-never">  
+            <input type="radio" id="concerts-never" name="concerts" value="never-have" />I never have
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="concerts-few-years">  
+            <input type="radio" id="concerts-few-years" name="concerts" value="few-years" />Once every few years
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="concerts-year">  
+            <input type="radio" id="concerts-year" name="concerts" value="once-year" />Once a year
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="concerts-few">  
+            <input type="radio" id="concerts-few" name="concerts" value="few-per-year" />A few times a year
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="concerts-monthly">  
+            <input type="radio" id="concerts-monthly" name="concerts" value="monthly" />Monthly, if not more
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="concerts-irregularly">  
+            <input type="radio" id="concerts-irregularly" name="concerts" value="irregularly" />Irregularly
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="fav-song-label">What is your favorite song? 
+            <input id="favorite-song" type="text" placeholder="Name and artist" />
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <fieldset id="section4">
+          <legend>
+            <mark>Book Reading Habits</mark>
+          </legend>
+          <label class="question" for="book-category-label">Preferred reading category: 
+            <select>
+              <option disabled selected>Select what you like to read</option>
+              <option>Fiction</option>
+              <option>Non-Fiction</option>
+              <option>Children's/Young Adult</option>
+              <option>Historical</option>
+              <option>Comics/Graphic Novels</option>
+              <option>Poetry</option>
+              <option>Religion/Spirituality</option>
+              <option>Cookbooks/Food</option>
+            </select>
+          </label>
+          <label class="question" for="book-genre-label">Favorite book genres (Select all that apply) </label>
+          <div class="checkbox-group">
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="literary"/>Literary Fiction
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="mystery-thriller" />Mystery/Thriller
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="sci-fi" />Science Fiction
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="fantasy" />Fantasy
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="historical" />Historical Fiction
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="romance" />Romance
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="adventure" />Adventure
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="horror" />Horror
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="dystopian" />Dystopian
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="biography" />Biography/Autobiography
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="memoir" />Memoir
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="crime" />True Crime
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="self-help" />Self-Help
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="psychology" />Psychology
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="history" />History
+              <span class="boxCheck"></span>      
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="science" />Science
+              <span class="boxCheck"></span>      
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="philosophy" />Philosophy
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="travel" />Travel
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="essays" />Essays
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="coming-of-age" />Coming-of-Age
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="ancient" />Ancient History
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="medieval" />Medieval
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="renaissance" />Renaissance
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="world-wars" />World War I/II
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="superhero" />Superhero
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="manga" />Manga
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="graphic-novels" />Graphic Novels
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="contemporary" />Contemporary Poetry
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="classic" />Classic Poetry
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="spoken-word" />Spoken Word Poetry
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="christian" />Christian
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="jewish" />Jewish
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="muslim" />Muslim
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="buddhist" />Buddhist
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="hindu" />Hindu
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="new-age" />New Age Spirituality
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="culinary" />Culinary Arts
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="international" />International
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="bookGenre" value="healthy-eating" />Healthy Eating
+              <span class="boxCheck"></span>
+            </label>
+          </div>
+          <label class="question" id="book-frequency-label">How often do you read?</label>
+          <label class="radioContainer" for="nerd">  
+            <input type="radio" id="nerd" name="bookFrequency" value="i-dont-read" />I don't read, nerd
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="book-rarely">
+            <input type="radio" id="book-rarely" name="bookFrequency" value="rarely" />Rarely
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="book-few-years">
+            <input type="radio" id="book-few-years" name="bookFrequency" value="every-few-years" />Once every few years
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="book-annually">
+            <input type="radio"  id="book-annually" name="bookFrequency" value="once-a-year" />About once every year
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="book-quarterly">
+            <input type="radio" id="book-quarterly" name="bookFrequency" value="every-few-months" />Around once every few months
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="book-monthly">
+            <input type="radio" id="book-monthly" name="bookFrequency" value="once-a-month" />About once a month
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="book-weekly">
+            <input type="radio" id="book-weekly" name="bookFrequency" value="every-week" />At least once every week
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="book-daily">
+            <input type="radio" id="book-daily" name="bookFrequency" value="every-day" />I get that knowledge every single day, boi
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="book-irregularly">
+            <input type="radio" id="book-irregularly" name="bookFrequency" value="irregularly" />Irregularly
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="fav-book-label">What's your favorite book?
+            <input id="favorite-book" type="text" placeholder="Title and author, please" />
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <fieldset id="section5">
+          <legend>
+            <mark>Gaming Preferences</mark>
+          </legend>
+          <label class="question" id="game-genre-label">Favorite video game genres? (Select all that apply) </label>
+          <div class="checkbox-group">
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="action" />Action
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="adventure" />Adventure
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="rpg" />Role-Playing Games (RPG)
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="simulator" />Simulator
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamGenre" value="strategy" />Strategy
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="sports" />Sports and Racing
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="fighting" />Fighting
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="horror" />Horror
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="puzzle" />Puzzle
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="music" />Music and Rhythm
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="educational" />Educational/Edutainment
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="battle-royale" />Battle Royale
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="sandbox" />Sandbox and Open World
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="moba" />Multiplayer Online Battle Arena (MOBA)
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="shooters" />Shooters (First-Person and Third-Person)
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="art" />Artistic/Indie
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="interactive-narrative" />Interactive Drama and Narrative
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="exploration" />Exploration
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="vr" />Virtual Reality (VR)
+              <span class="boxCheck"></span>
+            </label>
+          </div>
+          <label class="question" id="game-platform-label">Which platforms do you use?</label>
+          <div class="checkbox-group">
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="pc" />PC (Personal Computer)
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="playstation" />Playstation Consoles
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="xbox" />Xbox Consoles
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="nintendo" />Nintendo Consoles
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="handheld" />Handheld Gaming
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="mobile" />Mobile Gaming
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="arcade" />Arcade Systems
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="vr" />VR (Virtual Reality) Platforms
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="cloud" />Cloud Gaming
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="retro" />Retro and Classic Consoles
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gameGenre" value="microconsoles" />Microconsoles
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="browser" />Web Browser
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="emulators" />Emulators
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="smart-tv" />Smart TVs and Streaming Devices
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="gamePlatform" value="steam-deck" />Steam Deck
+              <span class="boxCheck"></span>
+            </label>
+          </div>  
+          </label>
+          <label class="question" id="game-frequency-label">How often do you game?</label>
+          <label class="radioContainer" for="game-never">  
+            <input type="radio" id="game-never" name="gameFrequency" value="never" />I never play video games
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="game-rarely">
+            <input type="radio" id="game-rarely" name="gameFrequency" value="rare" />Once in a rare blue moon
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="game-under-one">
+            <input type="radio" id="game-under-one" name="gameFrequency" value="under-one-hour" />Less than 1 hour a week
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="game-one-ten">
+            <input type="radio" id="game-one-ten" name="gameFrequency" value="one-to-ten" />1 to 10 hours a week
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="game-10-24">
+            <input type="radio" id="game-10-24" name="gameFrequency" value="ten-to-twentyfour" />10 to 24 hours a week
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="game-24-48">
+            <input type="radio" id="game-24-48" name="gameFrequency" value="twentyfour-to-fourtyeight" />24 to 48 hours a week
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="game-over-48">
+            <input type="radio" id="game-over-48" name="gameFrequency" value="over-fourtyeight" />Over 48 hours a week
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="game-irregularly">
+            <input type="radio" id="game-irregularly" name="gameFrequency" value="irregularly" />Irregularly/Don't know
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="fav-game-label">What's your favorite game?
+            <input id="favorite-game" type="text" placeholder="Game name, please" />
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <fieldset id="section6">
+          <legend>
+            </mark>TV Show Watching Habits</mark>
+          </legend>
+          <label class="question" id="tv-genre-label">Favorite TV genre?
+            <select>
+              <option disabled selected>Please select one TV genre</option>
+              <option>Drama</option>
+              <option>Comedy</option>
+              <option>Action/Adventure</option>
+              <option>Science Fiction</option>
+              <option>Fantasy</option>
+              <option>Horror</option>
+              <option>Mystery/Thriller</option>
+              <option>Documentary</option>
+              <option>Animation</option>
+              <option>Family/Children</option>
+              <option>Reality TV</option>
+              <option>Romance</option>
+              <option>Music/Dance</option>
+              <option>Historical</option>
+              <option>Satire</option>
+              <option>Western</option>
+              <option>Slice of Life</option>
+              <option>Game Shows</option>
+              <option>Travel/Adventure</option>
+              <option>Talk Shows</option>
+              <option>Hybrid</option>
+              <option>Other</option>
+              <option>I don't watch TV</option>
+            </select>
+          </label>
+          <label class="question" id="tv-binge-label">How many hours a week do you binge watch shows?
+            <input id="tv-binge" type="number" min="0" max="168" placeholder="Hrs/week"/>
+          </label>
+          <label class="question" id="tv-service-label">What is your favorite streaming service?</label>
+          <label class="radioContainer" for="tv-netflix">  
+            <input type="radio" id="tv-netflix" name="tvStreaming" value="netflix" />Netflix
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-hulu">
+            <input type="radio" id="tv-hulu" name="tvStreaming" value="hulu" />Hulu
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-amazon">
+            <input type="radio" id="tv-amazon" name="tvStreaming" value="amazon-prime-video" />Amazon Prime Video
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-disney">
+            <input type="radio" id="tv-disney" name="tvStreaming" value="disney-plus" />Disney+
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-apple">
+            <input type="radio" id="tv-apple" name="tvStreaming" value="apple-tv-plus" />Apple TV+
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-peacock">
+            <input type="radio" id="tv-peacock" name="tvStreaming" value="peacock" />Peacock
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-hbo">
+            <input type="radio" id="tv-hbo" name="tvStreaming" value="hbo-max" />HBO Max
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-paramount">
+            <input type="radio" id="tv-paramount" name="tvStreaming" value="paramount-plus" />Paramount+
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-google-play">
+            <input type="radio" id="tv-google-play" name="tvStreaming" value="google-play" />Google Play Movies & TV
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-vudu">
+            <input type="radio" id="tv-vudu" name="tvStreaming" value="vudu" />Vudu
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-youtube">
+            <input type="radio" id="tv-youtube" name="tvStreaming" value="youtube" />YouTube TV
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-sling">
+            <input type="radio" id="tv-sling" name="tvStreaming" value="sling" />Sling TV
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-fubo">
+            <input type="radio" id="tv-fubo" name="tvStreaming" value="fubo" />FuboTV
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-crave">
+            <input type="radio" id="tv-crave" name="tvStreaming" value="crave" />Crave
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-crunchyroll">
+            <input type="radio" id="tv-crunchyroll" name="tvStreaming" value="crunchyroll" />Crunchyroll
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-funimation">
+            <input type="radio" id="tv-funimation" name="tvStreaming" value="funimation" />Funimation
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-tubi">
+            <input type="radio" id="tv-tubi" name="tvStreaming" value="tubi" />Tubi
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-hoopla">
+            <input type="radio" id="tv-hoopla" name="tvStreaming" value="hoopla" />Hoopla
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-pluto">
+            <input type="radio" id="tv-pluto" name="tvStreaming" value="pluto" />Pluto TV
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-curiositystream">
+            <input type="radio" id="tv-curiositystream" name="tvStreaming" value="curiositystream" />CuriosityStream
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="tv-pirating">
+            <input type="radio" id="tv-pirating" name="tvStreaming" value="pirating" />Pirating
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="fav-show-label">What's your favorite show?
+            <input id="favorite-show" type="text" placeholder="Just the name" />
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <fieldset id="section7">
+          <legend>
+            <mark>Podcast Consumption</mark>
+          </legend>
+          <label class="question" id="podcast-frequency-label">How often do you listen to a podcast?</label>
+          <label class="radioContainer" for="podcast-hatred">  
+            <input type="radio" id="podcast-hatred" name="podcastFrequency" value="ihate-podcasts" />I hate podcasts
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-rarely">
+            <input type="radio" id="podcast-rarely" name="podcastFrequency" value="very rarely" />Very rarely
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-annually">
+            <input type="radio" id="podcast-annually" name="podcastFrequency" value="once-a-year" />About once a year
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-quarterly">
+            <input type="radio" id="podcast-quarterly" name="podcastFrequency" value="every-few-months" />Once every few months
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-monthly">
+            <input type="radio" id="podcast-monthly" name="podcastFrequency" value="once-a-month" />Usually once a month
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-weekly">
+            <input type="radio" id="podcast-weekly" name="podcastFrequency" value="every-week" />Every week
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-daily">
+            <input type="radio" id="podcast-daily" name="podcastFrequency" value="every-day" />At least once every day
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-irregular">
+            <input type="radio" id="podcast-irregular" name="podcastFrequency" value="irregularly" />Irregularly/Can't say
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="podcast-genre-label">Favorite podcast genre?
+            <select>
+              <option disabled selected>Please select a podcast genre</option>
+              <option>Comedy</option>
+              <option>News and Politics</option>
+              <option>True Crime</option>
+              <option>Technology</option>
+              <option>Science</option>
+              <option>Business</option>
+              <option>Education</option>
+              <option>Health and Wellness</option>
+              <option>Sports</option>
+              <option>Society and Culture</option>
+              <option>History</option>
+              <option>Arts</option>
+              <option>Self-Improvement</option>
+              <option>Parenting</option>
+              <option>Fiction</option>
+              <option>Music</option>
+              <option>Religion and Spirituality</option>
+              <option>Gaming</option>
+              <option>Food and Cooking</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="question" id="podcast-platform-label">What is your preferred podcast platform?</label>
+          <label class="radioContainer" for="podcast-youtube">
+            <input type="radio" id="podcast-youtube" name="podcastPlatform" value="youtube" />YouTube
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-apple">
+            <input type="radio" id="podcast-apple" name="podcastPlatform" value="apple" />Apple Podcasts
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-spotify">
+            <input type="radio" id="podcast-spotify" name="podcastPlatform" value="spotify" />Spotify
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-google">
+            <input type="radio" id="podcast-google" name="podcastPlatform" value="google" />Google Podcasts
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-stitcher">
+            <input type="radio" id="podcast-stitcher" name="podcastPlatform" value="stitcher" />Stitcher
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-podbean">
+            <input type="radio" id="podcast-podbean" name="podcastPlatform" value="podbean" />Podbean
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-overcast">
+            <input type="radio" id="podcast-overcast" name="podcastPlatform" value="overcast" />Overcast
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-pocket">
+            <input type="radio" id="podcast-pocket" name="podcastPlatform" value="pocket-casts" />Pocket Casts
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-castbox">
+            <input type="radio" id="podcast-castbox" name="podcastPlatform" value="castbox" />Castbox
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-tunein">
+            <input type="radio" id="podcast-tunein" name="podcastPlatform" value="tunein-radio" />TuneIn Radio
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-iheart">
+            <input type="radio" id="podcast-iheart" name="podcastPlatform" value="iheart-radio" />iHeart Radio
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-radiopublic">
+            <input type="radio" id="podcast-radiopublic" name="podcastPlatform" value="radiopublic" />Radiopublic
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-deezer">
+            <input type="radio" id="podcast-deezer" name="podcastPlatform" value="deezer" />Deezer
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-player">
+            <input type="radio" id="podcast-player" name="podcastPlatform" value="player-fm" />Player FM
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-amazon">
+            <input type="radio" id="podcast-amazon" name="podcastPlatform" value="amazon" />Amazon Music
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-podchaser">
+            <input type="radio" id="podcast-podchaser" name="podcastPlatform" value="podchaser" />Podchaser
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-himalaya">
+            <input type="radio" id="podcast-himalaya" name="podcastPlatform" value="himalaya" />Himalaya
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-acast">
+            <input type="radio" id="podcast-acast" name="podcastPlatform" value="acast" />Acast
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-podtail">
+            <input type="radio" id="podcast-podtail" name="podcastPlatform" value="podtail" />Podtail
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-listen">
+            <input type="radio" id="podcast-listen" name="podcastPlatform" value="listen-notes" />Listen Notes
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="podcast-castro">
+            <input type="radio" id="podcast-castro" name="podcastPlatform" value="castro" />Castro
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="fav-podcast-label">What is your favorite podcast?
+            <input id="favorite-podcast" type="text" placeholder="Podcast name" />
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <fieldset id="section8">
+          <legend>
+            <mark>Social Media & Live Streaming</mark>
+          </legend>
+          <label class="question" id="internet-platform-label">What are your preferred social media platforms? (Select all that apply) </label>
+          <div class="checkbox-group">
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="horrible" />None, social media is horrible
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="facebook" />Facebook
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="instagram" />Instagram
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="twitter" />Twitter
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="linkedin" />LinkedIn
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="snapchat" />Snapchat
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="pinterest" />Pinterest
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="tiktok" />TikTok
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="reddit" />Reddit
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="youtube" />YouTube
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="whatsapp" />WhatsApp
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="tumblr" />Tumblr
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="discord" />Discord
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="telegram" />Telegram
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="wechat" />WeChat
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="vk" />VKontakte
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="line" />Line
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="kakao" />KakaoTalk
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="vero" />Vero
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="mastodon" />Mastodon
+              <span class="boxCheck"></span>
+            </label>
+            <label class="checkboxContainer">
+              <input type="checkbox" name="internetPlatform" value="ello" />Ello
+              <span class="boxCheck"></span>
+            </label>
+          </div>
+          <label class="question" id="internet-frequency-label">How often do you use social media?</label>
+          <label class="radioContainer" for="internet-dont">
+            <input type="radio" id="internet-dont" name="internetFrequency" value="i-dont-bother" />I don't bother with that garbage
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="internet-occasion">
+            <input type="radio" id="internet-occasion" name="internetFrequency" value="on-occasion" />On occasion
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="internet-quarterly">
+            <input type="radio" id="internet-quarterly" name="internetFrequency" value="every-few-months" />Around once every few months
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer for="internet-monthly">
+            <input type="radio" id="internet-monthly" name="internetFrequency" value="every-month" />Roughly once a month
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="internet-weekly">
+            <input type="radio" id="internet-weekly" name="internetFrequency" value="every-week" />At least once every week
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="internet-daily">
+            <input type="radio" id="internet-daily" name="internetFrequency" value="once-daily" />I just check it once a day
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="internet-under-four">
+            <input type="radio" id="internet-under-four" name="internetFrequency" value="less-than-four" />Less than four hours every day
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="internet-over-four">
+            <input type="radio" id="internet-over-four" name="internetFrequency" value="above-four" />Over four hours every day
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="internet-irregular">
+            <input type="radio" id="internet-irregular" name="internetFrequency" value="irregularly" />Irregularly/Can't say
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="internet-feedback-label">I would like to hear your opinions on different platforms and social media as a whole
+            <textarea class="tinyText" id="opinion" name="opinion" rows="10" cols="66" placeholder="Feel free to let loose..." ></textarea>
+          </label>
+          <label class="question" id="streamer-label">Who do you prefer for live streaming content?
+            <select>
+              <option disabled selected>Pick a person</option>
+              <option>Cr1TiKaL (Charles White)</option>
+              <option>Ninja (Tyler Blevins)</option>
+              <option>Shroud (Michael Grzesiek)</option>
+              <option>Pokimane (Imane Anys)</option>
+              <option>xQc (Félix Lengyel)</option>
+              <option>TimTheTatman (Timothy Betar)</option>
+              <option>PewDiePie (Felix Kjellberg)</option>
+              <option>Valkyrae (Rae)</option>
+              <option>Jacksepticeye (Seán McLoughlin)</option>
+              <option>GamingWithJen (Jennifer Flagg)</option>
+              <option>Markiplier (Mark Fischbach)</option>
+              <option>Disguised Toast (Jeremy Wang)</option>
+              <option>StoneMountain64 (Evan Nelson Fong)</option>
+              <option>Gloom (Kassie Isabelle)</option>
+              <option>CohhCarnage (Ben Cassell)</option>
+              <option>KittyPlays (Kristen Michaela)</option>
+              <option>Sam Hyde</option>
+              <option>I hate all of these people</option>
+              <option>The creator I watch is not listed here</option>
+            </select>
+          </label>
+          <label class="question" id="stream-platform-label">Favorite live streaming platform?</label>
+          <label class="radioContainer" for="stream-twitch">
+            <input type="radio" id="stream-twitch" name="streamPlatform" value="twitch" />Twitch
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-youtube">
+            <input type="radio" id="stream-youtube" name="streamPlatform" value="youtube-live" />YouTube Live
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-facebook">
+            <input type="radio" id="stream-facebook" name="streamPlatform" value="facebook-gaming" />Facebook Gaming
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-trovo">
+            <input type="radio" id="stream-trovo" name="streamPlatform" value="trovo" />Trovo
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-dlive">
+            <input type="radio" id="stream-dlive" name="streamPlatform" value="dlive" />DLive
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-caffeine">
+            <input type="radio" id="stream-caffeine" name="streamPlatform" value="caffeine" />Caffeine
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-nimo">
+            <input type="radio" id="stream-nimo" name="streamPlatform" value="nimo-tv" />Nimo TV
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-smashcast">
+            <input type="radio" id="stream-smashcast" name="streamPlatform" value="smashcast" />Smashcast
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-worldstar">
+            <input type="radio" id="stream-worldstar" name="streamPlatform" value="worldstarhiphop" />WorldStarHipHop
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-dont">
+            <input type="radio" id="stream-dont" name="streamPlatform" value="dont-do-that" />I don't do any of that stuff
+            <span class="radioCheck"></span>
+          </label>
+          <label class="radioContainer" for="stream-other">
+            <input type="radio" id="stream-other" name="streamPlatform" value="different-platform" />A different platform
+            <span class="radioCheck"></span>
+          </label>
+          <label class="question" id="stream-type-label">Types of streams you like
+            <select>
+              <option disabled selected>Pick a topic</option>
+              <option>Gaming</option>
+              <option>Musical Performances</option>
+              <option>Comedy Shows</option>
+              <option>Variety Shows</option>
+              <option>Educational</option>
+              <option>Q&A Sessions</option>
+              <option>News and Commentary</option>
+              <option>Fitness and Wellness</option>
+              <option>Tech and Science</option>
+              <option>Cooking</option>
+              <option>DIY and Crafts</option>
+              <option>Travel and Exploration</option>
+              <option>Social Commentary</option>
+              <option>Gardening</option>
+              <option>Charity and Fundraising</option>
+              <option>Language Learning</option>
+              <option>Drugs</option>
+              <option>Nuisance/Harassment</option>
+              <option>Horrible Criminal Activity</option>
+            </select>
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <fieldset id="section9">
+          <legend>Feedback</legend>
+          <label class="question" id="feedback-label">Any questions about the form? Perhaps you have some thoughts pertaining to media you like now that you have reached the end. Or, maybe you simply want to ramble nonsensical things into the void. Anything you wish to say, please say it in the box below.
+            <textarea class="tinyText" id="feedback" name="feedback" rows="10" cols="66" placeholder="No excuses"></textarea>
+          </label>
+        </fieldset>
+      </section>
+
+      <section class="page-nav">
+        <button id="previous" type="button" onclick="prevSection()">Previous</button>
+        <button id="next" type="button" onclick="nextSection()">Next</button>
+        <button id="submit" type="submit" form="survey-form">Submit</button>
+      </section>
+
+    </form>
+
+    <footer>
+        <nav class="footer-nav-container">
+            <button id="contact" type="button">
+                <a href="contact.html">Contact</a>
+            </button>
+            <button id="info" type="button">
+                <a href="info.html">Info</a>
+            </button>
+        </nav>
+        <p>&copy; 2024 Jakob Lieb. All rights reserved</p>
+    </footer>
+
+    <script src="button navigation.js" defer></script>
+    <script src="client-side form validation.js" defer></script>
+  </body>
+</html>

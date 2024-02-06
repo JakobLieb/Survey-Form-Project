@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact</title>
+    
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1 id="title">Contact Us</h1>
+            <nav class="header-nav-container">
+                <button id="home" type="button">
+                    <a href="index.html">Home</a>
+                </button>
+                <button id="info" type="button">
+                    <a href="info.html">Info</a>
+                </button>
+            </nav>
+        </header>
+        <form id="contact-form" method="post" novalidate>
+            <section>
+                <fieldset>
+                    <legend>Contact Us</legend>
+                    <label class="contact-prompt" id="contact-name-label" for="name">Please enter your name: (*Required) </label>
+                    <input id="name" type="text" name="yourName" placeholder="First and Last" aria-describedby="name-description" required pattern="[A-Za-z\s]+" minLength="1" maxLength="100" />
+                    <span role="alert" id="nameError" aria-hidden="true">
+                        Please enter a name.
+                    </span>
+                    <label class="contact-prompt" id="contact-email-label" for="email">Please enter your email: (*Required) </label>
+                    <input id="email" type="email" name="email" placeholder="test@fakemail.com" aria-describedby="email-description" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" minLength="8" />
+                    <span role="alert" id="emailError" aria-hidden="true">
+                        You must enter a properly formatted email address.
+                    </span>
+                    <label class="contact-prompt" id="phone-label" for="phone">Phone Number: (* Required) </label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" aria-describedby="phone-number-description" required pattern="(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}" minLength="10" maxLength="17" />
+                    <span role="alert" id="phoneError" aria-hidden="true">
+                        Please enter a phone number. () + - characters are allowed.
+                    </span>
+                    <label class="contact-prompt" id="message-label" for="feedback">Please provide a brief message as to why you wish to communicate with us: (* Required) </label>
+                    <textarea class="tinyText" id="feedback" name="feedback" rows="10" cols="66" placeholder="This part is important for determining how quickly we get back with you" aria-describedby="feedback-message-description" required minLength="1" maxLength="100000"></textarea>
+                    <span role="alert" id="messageError" aria-hidden="true">
+                        Please enter something. Anything.
+                    </span>
+                    <label class="contact-prompt" id="contact-method-label">How do you wish to be contacted? (* Required)</label>
+                    <label class="radioContainer" for="call">
+                        <input type="radio" id="call" name="contactMethod" value="phone" aria-describedby="contact-method-description" required />
+                        Phone
+                        <span class="radioCheck"></span>
+                    </label>
+                    <label class="radioContainer" for="mail">
+                        <input type="radio" id="mail" name="contactMethod" value="email" aria-describedby="contact-method-description" required />
+                        Email
+                        <span class="radioCheck"></span>
+                    </label>
+                    <span role="alert" id="contactMethodError" aria-hidden="true">
+                        Please selet an option.
+                    </span>
+                </fieldset>
+            </section>
+
+            <section>
+                <fieldset>
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </section>
+        </form>
+
+        <footer>
+            <nav class="footer-nav-container">
+                <button id="home" type="button">
+                    <a href="index.html">Home</a>
+                </button>
+                <button id="info" type="button">
+                    <a href="info.html">Info</a>
+                </button>
+            </nav>
+            <p>&copy; 2024 Jakob Lieb. All rights reserved</p>
+        </footer>
+
+        <script src="client-side form validation.js" defer></script>
+    </body>
+</html>
